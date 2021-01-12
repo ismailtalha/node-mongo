@@ -15,7 +15,9 @@ let student = new Schema(
             type: String
         }
     },
-    { collection: "student" }
+  
+    { versionKey: false , timestamps: { createdAt: 'created_at' },collection: "student" } ,
+    
 );
 
 module.exports = mongoose.model("students", student);

@@ -26,10 +26,11 @@ router.post('/', (req, res) => {
     const data = student.create(req.body, (err, data) => {
         if (err) {
             console.log(err)
-            res.send(err)
+            res.json({ 'code': 403, 'messege': err.message })
         }
-        res.send(data)
+        res.send({ 'code': 200, 'data': data })
     })
+
 
 
 })
